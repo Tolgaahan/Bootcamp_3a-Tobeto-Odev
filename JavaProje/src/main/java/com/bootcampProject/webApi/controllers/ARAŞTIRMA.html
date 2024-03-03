@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>
+    NoSql nedir ? rdbms ile farkı nedir ? araştırınız.
+
+    NoSQL (Not Only SQL), geleneksel ilişkisel veritabanı sistemlerinden (RDBMS) farklı bir veritabanı modelidir. İşlevselliği
+    ve performansı artırmak için geliştirilen NoSQL veritabanları, büyük veri ve dağıtık veri depolama gereksinimlerine uygun çözümler sunar. İşte NoSQL ile RDBMS arasındaki farkların bazıları:
+
+    1. **Veri Modeli**:
+    - RDBMS: İlişkisel veritabanı sistemleri, verileri tablolar, sütunlar ve satırlar şeklinde organize eder.
+    Veriler arasındaki ilişkilerin tanımlanması için tablolara referanslar eklenir.
+    - NoSQL: NoSQL veritabanları, esnek veri modelleri sunar. Bu veri modelleri belge tabanlı, anahtar-değer tabanlı, sütun tabanlı ve grafik tabanlı gibi çeşitli olabilir. Bu esneklik, farklı veri tipleri ve yapıları için uygun bir çözüm sunar.
+
+    2. **Ölçeklenebilirlik**:
+    - RDBMS: İlişkisel veritabanları genellikle dikey ölçeklenebilirlik (scale-up) modelini kullanır,
+    yani bir sunucunun kaynakları (CPU, bellek vb.) daha güçlü hale getirilerek performans artırılır.
+    - NoSQL: NoSQL veritabanları genellikle yatay ölçeklenebilirlik (scale-out) modelini kullanır, yani daha fazla sunucu eklenerek veritabanı kapasitesi artırılır.
+    Bu, büyük veri işleme ve dağıtık sistemler için daha uygun bir yaklaşımdır.
+
+    3. **ACID Özellikleri**:
+    - RDBMS: İlişkisel veritabanları ACID (Atomik, Tutarlı, İzole, Dayanıklı) özellikleri sağlar. Bu özellikler, veri bütünlüğünü ve işlemlerin güvenilirliğini sağlar.
+    - NoSQL: NoSQL veritabanlarının birçoğu ACID özelliklerini sağlamaz. Bunun yerine, bazı NoSQL veritabanları esneklik ve ölçeklenebilirlik için
+    CID yerine BASE (Temel Olarak Asenkron ve Geçici) modelini kullanır. BASE modeli, tutarlılık ve izolasyon yerine yüksek kullanılabilirlik ve toleranslılık üzerine odaklanır.
+
+    4. **Yapısal Esneklik**:
+    - RDBMS: İlişkisel veritabanları için şema (schema) zorunludur. Veri modeli önceden tanımlanmalı ve değişiklikler dikkatlice yönetilmelidir.
+    - NoSQL: NoSQL veritabanlarında şema genellikle esnektir veya tamamen yoktur. Bu, veri modelinde esneklik ve değişikliklere daha iyi uyum sağlar.
+
+    5. **Kullanım Senaryoları**:
+    - RDBMS: İlişkisel veritabanları, yapısal ve ilişkisel verilerin depolanması ve sorgulanması için idealdir.
+    Tipik kullanım alanları arasında işletme uygulamaları, finansal sistemler ve kurumsal veritabanları bulunur.
+    - NoSQL: NoSQL veritabanları, büyük hacimli ve dağıtık verilerin depolanması, hızlı okuma/yazma işlemleri,
+    gerçek zamanlı analiz ve web uygulamaları gibi senaryolar için daha uygundur. Tipik kullanım alanları arasında sosyal medya,
+    IoT (Nesnelerin İnterneti), bulut tabanlı uygulamalar ve büyük veri analitiği bulunur.
+</h1>
+
+<h1>
+    AOP (Aspect-Oriented Programming), yazılım geliştirme sürecinde belirli işlevlerin (cross-cutting concerns) ayrı birimler olarak ele alınmasını sağlayan bir programlama paradigmadır.
+    Bu işlevler genellikle birçok farklı sınıf veya modül içinde tekrarlanan kod parçalarıdır ve iş mantığından bağımsızdır. AOP, bu tür işlevleri merkezi bir şekilde yönetmek ve tekrar kullanımı artırmak için kullanılır.
+
+    Spring Boot tarafında, AOP kullanarak bir dizi işlevi uygulamak oldukça yaygındır. Bunlar arasında logging, caching ve transactional işlemler öne çıkar.
+
+    1. **Logging (Günlükleme)**:
+    - Logging, uygulamanın çalışma zamanında olayların kaydedilmesi ve izlenmesi işlemidir. Bu olaylar hata mesajları, bilgi mesajları, uyarılar vb. olabilir.
+    - Spring Boot'ta AOP kullanarak loglama işlevi, uygulamanın farklı katmanlarına dağılmış olan loglama kodunu merkezi bir konumda toplamayı sağlar.
+    Bu sayede loglama kodu tekrar kullanılabilir, sınıflar arasında dağıtılmış olmaz ve kod temiz ve okunabilir olur.
+
+    2. **Caching (Önbellekleme)**:
+    - Caching, sık kullanılan verilerin bellekte saklanması ve tekrarlı isteklerde bu verilerin tekrar hesaplanmasının önlenmesidir. Bu,
+    uygulama performansını artırır ve gereksiz veritabanı erişimlerini azaltır.
+    - Spring Boot'ta AOP kullanarak caching işlevi, belirli metodların sonuçlarını önbelleğe almayı sağlar. Bu,
+    metodun sonuçlarının bir kez hesaplanması ve sonraki isteklerde önbellekten alınması anlamına gelir.
+
+    3. **Transactional (İşlem Yönetimi)**:
+    - Transactional işlem yönetimi, bir dizi işlemin grup olarak çalışmasını sağlar. Bu işlemlerden herhangi biri başarısız
+    olduğunda, diğer işlemler geri alınır ve veritabanı tutarlı bir duruma geri döner.
+    - Spring Boot'ta AOP kullanarak transactional işlevi, belirli metodların işlem sınırları içinde çalışmasını sağlar. Bu,
+    metodun başarılı bir şekilde tamamlanması durumunda işlemin onaylanmasını ve aksi halde geri alınmasını sağlar.
+
+    Bu AOP işlevlerinin kullanımı, Spring Boot uygulamalarının performansını artırır, kod tekrarını azaltır,
+    kod temizliğini sağlar ve yazılım geliştirme sürecini daha verimli hale getirir.
+</h1>
+</body>
+</html>
